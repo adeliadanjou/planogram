@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table,
+        td,
+        tr {
+            border: 1px solid black;
+        }
+
+        td {
+            width: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="planogram">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+        </tr>
+    </table>
+    <script>
+        document.querySelector("#planogram").onclick = function (e) {
+            
+            if (e.target.style.backgroundColor === "rgb(255, 0, 0)") {
+                e.target.style.backgroundColor = "rgb(255, 255, 255)"
+            }   else {
+                e.target.style.backgroundColor = "rgb(255, 0, 0)"
+            }
+        }
+    </script>
+</body>
+</html>
