@@ -15,7 +15,14 @@
 
         td {
             width: 100px;
+            height: 100px;
             text-align: center;
+            transition: all 1.5s;
+        }
+
+        #planogram td {
+            background-repeat: no-repeat;
+            background-size: contain;
         }
     </style>
 </head>
@@ -39,11 +46,10 @@
     </table>
     <script>
         document.querySelector("#planogram").onclick = function (e) {
-            
-            if (e.target.style.backgroundColor === "rgb(255, 0, 0)") {
-                e.target.style.backgroundColor = "rgb(255, 255, 255)"
+            if (e.target.style.backgroundImage === `url("mesa.png")`) {
+                e.target.style.backgroundImage = "initial"
             }   else {
-                e.target.style.backgroundColor = "rgb(255, 0, 0)"
+                e.target.style.backgroundImage = "url('mesa.png')"
             }
         }
     </script>
