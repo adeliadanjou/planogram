@@ -38,31 +38,20 @@
 </head>
 
 <body>
-    <table id="planogram">
-        <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>7</td>
-            <td>8</td>
-            <td>9</td>
-            <td>10</td>
-        </tr>
-    </table>
+    <table id="planogram"></table>
+
     <div id="tablePositionsDescriptor">
         <fieldset>
             <label for="">filas</label>
-            <input type="range" min="1" max="10">
+            <input type="range" min="1" max="10" id="tableConfiguratorRows">
 
-            <label>columnas</label> 
-            <input type="range" min="1" max="10">
-        </fieldset> 
-        
+            <h2 id="rowsToGenerate"></h2>
+            <!-- <label>columnas</label>
+            <input type="range" min="1" max="10" id="tableConfiguratorColumns"> -->
+
+            <button id="tableGeneration">generate!!!</button>
+        </fieldset>
+
     </div>
     <script>
         document.querySelector("#planogram").onclick = function (e) {
@@ -72,6 +61,23 @@
                 e.target.style.backgroundImage = "url('mesa.png')"
             }
         }
+
+        document.querySelector("#tableConfiguratorRows").onchange = function (e) {
+            window.tablesToGenerate = e.target.value
+            document.querySelector("#rowsToGenerate").innerHTML = e.target.value
+        }
+
+        document.querySelector("#tableGeneration").onclick = function () {
+            document.querySelector("#planogram").innerHTML = '<tr><td><td><td><td><td></tr>'.repeat(window.tablesToGenerate);
+        }
+
+        //todo: implement this
+        // document.querySelector("#tableConfiguratorColumns").onchange = function (e) {
+        //     var str = '<td>'.repeat(e.target.value);
+        //     var child = document.createElement('tr');
+        //     child.innerHTML = str;
+        //     document.querySelector("#planogram").appendChild(child)
+        // }
     </script>
 </body>
 
