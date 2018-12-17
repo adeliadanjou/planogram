@@ -24,6 +24,16 @@
             background-repeat: no-repeat;
             background-size: contain;
         }
+        #tablePositionsDescriptor {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 200px;
+            background: white;
+        }
+        #tablePositionsDescriptor label {
+            display: block;
+        }
     </style>
 </head>
 
@@ -44,14 +54,25 @@
             <td>10</td>
         </tr>
     </table>
+    <div id="tablePositionsDescriptor">
+        <fieldset>
+            <label for="">filas</label>
+            <input type="range" min="1" max="10">
+
+            <label>columnas</label> 
+            <input type="range" min="1" max="10">
+        </fieldset> 
+        
+    </div>
     <script>
         document.querySelector("#planogram").onclick = function (e) {
             if (e.target.style.backgroundImage === `url("mesa.png")`) {
                 e.target.style.backgroundImage = "initial"
-            }   else {
+            } else {
                 e.target.style.backgroundImage = "url('mesa.png')"
             }
         }
     </script>
 </body>
+
 </html>
